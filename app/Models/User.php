@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->kata_sandi;
     }
+
+    public function getAuthPasswordName()
+    {
+        return 'kata_sandi';
+    }
 }

@@ -22,13 +22,13 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            // Cek apakah role pengguna adalah admin (sesuaikan nama kolom di DB jika berbeda)
-            if (Auth::user()->role === 'admin') {
-                return redirect()->intended(route('admin.dashboard'));
+            // Cek peran pengguna
+            if (Auth::user()->peran === 'admin') {
+                return redirect()->route('admin.dashboard');
             }
 
-            // Jika bukan admin (pengguna biasa)
-            return redirect()->intended(route('pengguna.dashboard'));
+            // Jika pengguna biasa
+            return redirect()->route('pengguna.dashboard');
         }
 
         return back()->withErrors([
@@ -39,6 +39,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
