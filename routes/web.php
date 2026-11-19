@@ -6,10 +6,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserDashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Halaman Pengunjung
 Route::get('/', [VisitorController::class, 'index'])->name('home');
 
