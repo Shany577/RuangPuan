@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Models;
@@ -42,8 +41,8 @@ class User extends Authenticatable
     ];
 
     // Memberitahu Laravel bahwa password ada di kolom kata_sandi
-    public function getAuthPasswordName(): string
+    public function getAuthPassword()
     {
-        return 'kata_sandi';
+        return $this->kata_sandi;
     }
 }
