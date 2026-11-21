@@ -28,16 +28,24 @@
                     class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
                         Kelola Kategori
                 </a>
-                <a href="#" class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
-                    Postingan & Komentar
+                <a href="{{ route('admin.postingan.index') }}"
+                    class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
+                    Kelola Postingan
                 </a>
-                <a href="#" class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
+                <a href="{{ route('admin.komentar.index') }}"
+                    class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
+                    Kelola Komentar
+                </a>
+                <a href="{{ route('admin.laporan-konten.index') }}"
+                    class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
                     Tinjau Laporan Konten
                 </a>
-                <a href="#" class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
+                <a href="{{ route('admin.laporan-kejadian.index') }}"
+                    class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
                     Tinjau Laporan Kejadian
                 </a>
-                <a href="#" class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
+                <a href="{{ route('admin.direktori-bantuan.index') }}"
+                    class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
                     Kelola Direktori Bantuan
                 </a>
             </nav>
