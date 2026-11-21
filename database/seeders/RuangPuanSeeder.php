@@ -9,7 +9,7 @@ class RuangPuanSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('kategori')->insert([
+        $kategori = [
             [
                 'nama_kategori' => 'Kesehatan Mental',
                 'deskripsi' => 'Informasi dan dukungan seputar kesehatan mental perempuan.',
@@ -30,6 +30,13 @@ class RuangPuanSeeder extends Seeder
                 'nama_kategori' => 'Kekerasan terhadap Perempuan',
                 'deskripsi' => 'Informasi dan dukungan terkait pencegahan serta penanganan kekerasan.',
             ],
-        ]);
+        ];
+
+        foreach ($kategori as $item) {
+            DB::table('kategori')->updateOrInsert(
+                ['nama_kategori' => $item['nama_kategori']],
+                ['deskripsi' => $item['deskripsi']]
+            );
+        }
     }
 }
