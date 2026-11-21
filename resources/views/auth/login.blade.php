@@ -41,6 +41,13 @@
         </form>
 
         <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600 mb-3">
+                Belum punya akun?
+                <a href="{{ route('register') }}" class="text-[#839958] font-semibold hover:underline">
+                    Daftar sekarang
+                </a>
+            </p>
+
             <a href="{{ route('home') }}" class="text-sm text-[#839958] hover:underline">
                 &larr; Kembali ke Halaman Pengunjung
             </a>
