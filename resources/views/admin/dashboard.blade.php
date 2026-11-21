@@ -16,14 +16,17 @@
                 <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2.5 rounded-xl bg-[#839958] text-white font-semibold">
                     Dashboard Utama
                 </a>
-                <a href="#" class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
-                    Kelola Akun Pengguna
+                <a href="{{ route('admin.pengguna.index') }}"
+                    class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
+                        Kelola Akun Pengguna
                 </a>
-                <a href="#" class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
-                    Persetujuan Pendaftaran
+                <a href="{{ route('admin.pendaftaran.index') }}"
+                    class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
+                        Persetujuan Pendaftaran
                 </a>
-                <a href="#" class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
-                    Kelola Kategori
+                <a href="{{ route('admin.kategori.index') }}"
+                    class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
+                        Kelola Kategori
                 </a>
                 <a href="#" class="block px-4 py-2.5 rounded-xl hover:bg-[#839958]/30 transition">
                     Postingan & Komentar

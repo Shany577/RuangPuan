@@ -5,6 +5,7 @@ use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserDashboardController;
+use App\Http\Controllers\KategoriController;
 
 // Halaman Pengunjung
 Route::get('/', [VisitorController::class, 'index'])->name('home');
@@ -19,7 +20,37 @@ Route::middleware(['auth'])->prefix('pengguna')->name('pengguna.')->group(functi
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
 });
 
-// Halaman Dashboard Admin (dilindungi middleware auth)
+
+// Halaman Dashboard Admin
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+
+    // Dashboard Admin
+    Route::get('/dashboard', [AdminController::class, 'index'])
+        ->name('dashboard');
+
+    // Mengelola Akun Pengguna
+    Route::get('/pengguna', [AdminController::class, 'pengguna'])
+        ->name('pengguna.index');
+
+    // Mengubah Status Akun Pengguna
+    Route::put('/pengguna/{id}/status', [AdminController::class, 'ubahStatusPengguna'])
+        ->name('pengguna.status');
+
+    Route::get('/pendaftaran', [AdminController::class, 'pendaftaran'])
+    ->name('pendaftaran.index');
+
+    Route::put('/pendaftaran/{id}/status', [AdminController::class, 'ubahStatusPendaftaran'])
+    ->name('pendaftaran.status');
+
+    Route::get('/kategori', [KategoriController::class, 'index'])
+    ->name('kategori.index');
+
+Route::post('/kategori', [KategoriController::class, 'store'])
+    ->name('kategori.store');
+
+Route::put('/kategori/{id}', [KategoriController::class, 'update'])
+    ->name('kategori.update');
+
+Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])
+    ->name('kategori.destroy');
 });
